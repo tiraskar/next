@@ -1,0 +1,74 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+
+   .no-scrollbar::-webkit-scrollbar {
+      display: none;
+   }
+
+   .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+   }
+
+   .icon-flex {
+      @apply flex items-center gap-1
+   }
+
+}
+
+@layer utilities {
+   h1 {
+      @apply text-lg lg:text-xl xl:text-2xl 2xl:text-4xl font-extrabold bg-color-background text-white text-center py-2;
+   }
+
+   h2 {
+      @apply text-lg md:text-xl text-gray-700 xl:text-2xl font-semibold;
+   }
+
+   p {
+      @apply text-sm lg:text-lg text-gray-500 tracking-wide;
+   }
+}
+
+.hamburger {
+   cursor: pointer;
+   width: 24px;
+   height: 24px;
+   transition: all 0.25s;
+   position: relative;
+}
+
+.hamburger-top,
+.hamburger-middle,
+.hamburger-bottom {
+   position: absolute;
+   width: 24px;
+   height: 2px;
+   top: 0;
+   left: 0;
+   background: black;
+   transform: rotate(0);
+   transition: all 0.5s;
+}
+
+.hamburger-middle {
+   transform: translateY(7px);
+}
+
+.hamburger-bottom {
+   transform: translateY(14px);
+}
+.hidden-middle {
+   opacity: 0;
+}
+
+.open {
+   transform: rotate(45deg) translateY(6px) translateX(6px);
+}
+
+.open~.hamburger-bottom {
+   transform: rotate(-45deg) translateY(6px) translateX(-6px);
+}
